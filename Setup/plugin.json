@@ -1,6 +1,6 @@
 {
     "title": "Google reCaptcha",
-    "version": "1.00",
+    "version": "1.01",
     "name": "GoogleReCaptcha",
     "description": "Replace default image recognition based recaptcha by Google's smart checkbox reCaptcha",
     "author": "ImpressPages",
