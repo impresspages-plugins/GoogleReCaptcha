@@ -43,7 +43,7 @@ class Captcha extends Field
             $this->getClasses()
         ) . '" name="' . htmlspecialchars($this->getName()) . '" ' . $this->getValidationAttributesStr(
             $doctype
-        ) . ' type="hidden" value="' . htmlspecialchars($this->getValue()) . '" />
+        ) . ' type="hidden" value="1" />
         <div class="form-group g-recaptcha" data-sitekey="' . $siteKey . '"></div>
         ';
     }
