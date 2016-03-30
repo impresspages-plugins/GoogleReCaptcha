@@ -35,6 +35,8 @@ class Captcha extends Field
     public function render($doctype, $environment)
     {
         $siteKey = ipGetOption('GoogleReCaptcha.siteKey');
+
+        //hidden input field is required for javascript to properly mark errored field.
         return '
         <input ' . $this->getAttributesStr($doctype) . ' class="' . implode(
             ' ',
@@ -67,7 +69,7 @@ class Captcha extends Field
     public function validate($values, $valueKey, $environment)
     {
         if (ipGetOption('GoogleReCaptcha.mode') == 'Development') {
-           // return false;
+           return false;
         }
 
         $secret = ipGetOption('GoogleReCaptcha.secretKey');
@@ -81,15 +83,6 @@ class Captcha extends Field
             return $errorText;
         }
     }
-//
-//    /**
-//     * Get validation input name
-//     *
-//     * @return string
-//     */
-//    public function getValidationInputName()
-//    {
-//        return $this->name . '[g-recaptcha-response]';
-//    }
+
 
 }
